@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacks CRUD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="bg-gray-800 text-white">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <ul class="flex items-center space-x-4">
+                <li><a href="{% url 'snack_list' %}" class="hover:text-gray-300">Home</a></li>
+                <li><a href="{% url 'snack_create' %}" class="hover:text-gray-300">Add New Snack</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+        {% block content %}
+        <!-- This block will be overridden by child templates -->
+        {% endblock content %}
+    </main>
+
+    <footer class="bg-gray-700 text-white text-center py-3">
+        <p>Snacks CRUD Project</p>
+    </footer>
+</body>
+</html>
+
